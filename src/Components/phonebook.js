@@ -21,17 +21,11 @@ export default function Phonebook() {
       number: data.number,
     };
 
-    const normalizeName = textNormalize(data.name);
-
-    if (contacts.some(item => item.name.toLowerCase() === normalizeName)) {
+    if (contacts.some(item => item.name.toLowerCase() === data.name.toLowerCase())) {
       alert('This name is olready in contact');
       return;
     }
     setContacts(prevState => [contact, ...prevState.contacts]);
-  };
-
-  const textNormalize = text => {
-    return text.toLowerCase();
   };
 
   const changeFilter = e => {
