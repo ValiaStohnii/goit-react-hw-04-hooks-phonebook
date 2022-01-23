@@ -25,7 +25,7 @@ export default function Phonebook() {
       alert('This name is olready in contact');
       return;
     }
-    setContacts(prevState => [contact, ...prevState.contacts]);
+    setContacts(prevState => [contact, ...prevState]);
   };
 
   const changeFilter = e => {
