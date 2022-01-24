@@ -20,6 +20,7 @@ export default function Phonebook() {
       name: data.name,
       number: data.number,
     };
+    console.log(contact);
 
     if (contacts.some(item => item.name.toLowerCase() === data.name.toLowerCase())) {
       alert('This name is olready in contact');
@@ -38,7 +39,7 @@ export default function Phonebook() {
   };
 
   const deleteContact = contactId => {
-    setContacts(prevState => prevState.contacts.filter(c => c.id !== contactId));
+    setContacts(prevState => prevState.filter(c => c.id !== contactId));
   };
 
   return (
